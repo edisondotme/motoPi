@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
-	<title>{% block title %} Default title: motoPi {% endblock %}</title>
+	<title>{% block title %} motoPi {% endblock %}</title>
 	<meta charset="utf-8" />
 	{% load staticfiles %}
 	<link rel='stylesheet' href="{% static 'css/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'icons/moto-icon.png' %}">
 </head>
 
 <body class="body">
-	<h2>motoPi</h2>
+	<h2><a href="/">motoPi</a></h2>
+	<ul>
+		<!-- <li><a href="/main/">Main</a></li> -->
+		<li><a href="/display/">Display</a></li>
+		<li><a href="/maintenance/">Maintenance</a></li>
+	</ul>
 	<hr />
 	<div>
 		{% block content %}

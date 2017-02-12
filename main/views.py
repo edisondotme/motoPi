@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-	return render(request, 'motoPi/home.html')
+	return render(request, 'main/main.html')

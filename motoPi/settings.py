@@ -126,9 +126,9 @@ STATIC_URL = "/static/"
 # I'll learn how to do static css files later
 # STATIC_ROOT = ''
 
-# STATICFILES_DIRS = (
-
-# 	)
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, "static")
+]
 
 # MEDIA_ROOT = ''
 
