@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import time
+
+from code.timeClock import getCurrTime
 
 
 def index(request):
@@ -10,7 +11,4 @@ def index(request):
 
 
 def disp_time(request):
-	currTime = time.strftime("%H:%M:%S", time.gmtime())
-
-	data = {'time': currTime}
-	return render(request, 'display/time.html', data)
+	return render(request, 'display/time.html', getCurrTime())
