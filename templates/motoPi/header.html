@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{% block title %} Default title: motoPi {% endblock %}</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel='stylesheet' href="{% static 'css/main_style.css' %}">
+</head>
+
+<body class="body">
+	<h2>motoPi</h2>
+	<hr />
+	<div>
+		{% block content %}
+		<p>This is the default content for header.html</p>
+		{% endblock %}
+	</div>
+</body>
+
+</html>
