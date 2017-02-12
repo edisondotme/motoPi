@@ -1,6 +1,12 @@
 {% extends "motoPi/header.html" %}
+
+{% load staticfiles %}
 {% block title %}Display{% endblock %}
+
+<!-- I don't  now why this doesn't work. How do you override css? -->
+{% static 'css/style2.css' %}
 
 {% block content %}
 <p>This paragraph is saved in display_home.html</p>
+<p>Here is a <a href="time/">link</a> to the time page.</p>
 {% endblock %}
