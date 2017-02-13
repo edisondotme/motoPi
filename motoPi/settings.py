@@ -126,6 +126,7 @@ STATIC_URL = "/static/"
 # I'll learn how to do static css files later
 # STATIC_ROOT = ''
 
+# This allows django to find the static files folder in the base_DIR
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, "static")
 ]
