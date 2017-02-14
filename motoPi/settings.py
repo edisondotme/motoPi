@@ -73,6 +73,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'motoPi.wsgi.application'
 
+# Channels
+
+CHANNEL_LAYERS = {
+	"default": {
+		"BACKEND": "asgiref.inmemory.ChannelLayer",
+		# "CONFIG": {  # Note: this config is only for Redis server
+		# 	"hosts": [("localhost", 6379)]
+		# },
+		"ROUTING": "display.routing.channel_routing",
+	},
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

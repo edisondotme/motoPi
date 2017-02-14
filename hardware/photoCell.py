@@ -63,6 +63,7 @@ class PhotoCell:
 		RCPin = RCPin or self.RCPin
 		# ^^^ Is there a cleaner way to have a default method parameter?
 
+		print('Running...')
 		with open(os.path.join(DATA_DIR, "photoCell_data.csv"), "a") as photoCell_data:
 			while True:
 				writer = csv.writer(photoCell_data, delimiter=',')
