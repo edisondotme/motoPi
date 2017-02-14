@@ -20,5 +20,6 @@ urlpatterns = [
 	url(r'^$', include('main.urls')),  # motopi.com/
 	url(r'^admin/', admin.site.urls),
 	url(r'^display/', include('display.urls')),
-	url(r'^maintenance/', include('maintenance.urls'))
+	url(r'^maintenance/', include('maintenance.urls')),
+	url(r'^sensors/', include('sensors.urls')),
 ]

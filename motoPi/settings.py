@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-# from secrets import *
+from .secrets import SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zwt=hk7on59(rw58^dg7*3e%(x%vg&egeai@e$3^m!b1*zm0y#'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 	'main',
 	'display',
 	'maintenance',
+	'sensors',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ CHANNEL_LAYERS = {
 		# "CONFIG": {  # Note: this config is only for Redis server
 		# 	"hosts": [("localhost", 6379)]
 		# },
-		"ROUTING": "display.routing.channel_routing",
+		"ROUTING": "sensors.routing.channel_routing",
 	},
 }
 

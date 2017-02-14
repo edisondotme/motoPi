@@ -1,0 +1,15 @@
+# This .gitignore is stolen from github's example .gitignore files
+# It is somewhat modified
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.py[cod]
+*$py.class
+
+# Django stuff
+*.log
+local_settings.py
+
+# Edison's exclusions:
+secrets.py
