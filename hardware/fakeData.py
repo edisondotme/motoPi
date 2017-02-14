@@ -1,3 +1,8 @@
+"""
+This file is used to generate fake data for testing.
+Consider moving it to a more appropriate directory like /tests/
+"""
+
 import random
 import time
 
