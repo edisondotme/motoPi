@@ -1,12 +1,13 @@
 {% extends "motoPi/header.html" %}
 
 {% load staticfiles %}
-{% block title %}Sensors{% endblock %}
+{% block title %}Sensors - Light{% endblock %}
 
 <!-- I don't  now why this doesn't work. How do you override css? -->
 {% static 'css/style2.css' %}
 
 {% block content %}
-<p>This paragraph is saved in sensors_home.html</p>
-<p><a href="light/">Light sensor</a></p>
+<h2>Light sensor</h2>
+
+<p>Sensor reading: {{ reading }}</p>
 {% endblock %}
