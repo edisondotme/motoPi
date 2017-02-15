@@ -8,5 +8,5 @@ Use a Raspberry Pi and various hardware sensors for a smart motorcycle display p
 * [Channels](https://channels.readthedocs.io/en/stable/index.html)
 
 
-![mockup](/static/images/mockup.png)
+![mockup](/static/images/mockup2.png)
 
