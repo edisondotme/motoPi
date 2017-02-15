@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 	'display',
 	'maintenance',
 	'sensors',
+	'sensorWorker',
 ]
 
 MIDDLEWARE = [

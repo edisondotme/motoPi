@@ -6,6 +6,7 @@ def index(request):
 
 
 def light(request):
-	return render(request, 'sensors/light.html', {
-		'sensor': '99',
+	return render(request, 'sensors/light.html',
+		{
+			'sensor': '99',
 		})

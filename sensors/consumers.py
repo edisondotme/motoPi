@@ -5,7 +5,7 @@ def ws_connect(message):
 	print("Someone connected.")
 	path = message['path']  # i.e /sensor/
 
-	if path == b'/sensor/':
+	if path == b'^/sensors/light/':
 		print("Adding new user to sensor group")
 
 		# Adds user to group for broadcast
