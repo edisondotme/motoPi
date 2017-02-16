@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	'channels',  # I'm not sure if I want to use channels. Consider removing
+	'channels',
 	'main',
 	'display',
 	'maintenance',
@@ -79,10 +79,15 @@ WSGI_APPLICATION = 'motoPi.wsgi.application'
 
 CHANNEL_LAYERS = {
 	"default": {
-		"BACKEND": "asgiref.inmemory.ChannelLayer",
-		# "CONFIG": {  # Note: this config is only for Redis server
-		# 	"hosts": [("localhost", 6379)]
-		# },
+		# Note: Consider using asgi_ipc backend in the future. No, right now
+		"BACKEND": "asgi_ipc.IPCChannelLayer",
+		# "BACKEND": "asgi_redis.RedisChannelLayer",
+		# "BACKEND": "asgiref.inmemory.ChannelLayer",
+		"CONFIG": {  # Note: this config is only for Redis server
+			# "hosts": [("localhost", 6379)],  # could run elsewhere than localhos
+			# "hosts": [os.environ.get("REDIS_URL", "redis://localhost:6379")],
+			"prefix": "motoPi",
+		},
 		"ROUTING": "sensors.routing.channel_routing",
 	},
 }

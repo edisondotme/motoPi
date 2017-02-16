@@ -3,9 +3,9 @@ from channels import Group
 
 def ws_connect(message):
 	print("Someone connected.")
-	path = message['path']  # i.e /sensor/
+	path = message['path']  # i.e /sensors/light
 
-	if path == b'^/sensors/light/':
+	if path == '/sensors/light/':
 		print("Adding new user to sensor group")
 
 		# Adds user to group for broadcast
@@ -20,7 +20,8 @@ def ws_connect(message):
 def ws_message(message):
 	# ASGI Websocket packet-received and send-packet message types
 	# both have a "text" key for their textual data.
-	print("Received!" + message['text'])
+	# Group("sensor").send({'text': "Sensor reading="})
+	print("Message Received!" + message['text'] + '\n')
 
 
 def ws_disconnect(message):

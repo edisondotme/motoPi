@@ -15,6 +15,7 @@ class Command(BaseCommand):
 		x = 0
 		while True:
 			Group("sensor").send({'text': "Sensor reading=" + str(x)})
+			# message.reply_channel.send({'text': "Sensor reading=" + str(x)})
 			time.sleep(2)
 			x = x + 1
 			self.stdout.write("Sensor reading..." + str(x))
