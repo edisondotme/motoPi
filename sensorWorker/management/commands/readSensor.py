@@ -3,8 +3,8 @@ from channels import Group
 from django.core.management import BaseCommand
 import time
 
-# The class must be named Command, and subclass BaseCommand
 
+# The class must be named Command, and subclass BaseCommand
 
 class Command(BaseCommand):
 	# Show this when the user types help
@@ -13,9 +13,12 @@ class Command(BaseCommand):
 	# A command must define handle()
 	def handle(self, *args, **options):
 		x = 0
+
+		# remove:
+		pc = PhotoCell(18)
+
 		while True:
 			Group("sensor").send({'text': "Sensor reading=" + str(x)})
-			# message.reply_channel.send({'text': "Sensor reading=" + str(x)})
 			time.sleep(2)
 			x = x + 1
 			self.stdout.write("Sensor reading..." + str(x))
