@@ -9,6 +9,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 import csv
+from channels import Group
 
 from django.conf import settings  # Needed for relative filepath saving of csv
 
@@ -43,12 +44,13 @@ class PhotoCell:
 		"""
 		This methods takes one reading of the photocell and then returns it.
 		"""
+
 		RCPin = RCPin or self.RCPin
 		# ^^^ Is there a cleaner way to have a default method parameter?
 		reading = 0
 		GPIO.setup(RCPin, GPIO.OUT)
 		GPIO.output(RCPin, GPIO.LOW)
-		time.sleep(0.1)
+		time.sleep(0.2)
 
 		GPIO.setup(RCPin, GPIO.IN)
 		# This takes 1 millisecond per loop cycle.
@@ -64,23 +66,9 @@ class PhotoCell:
 		RCPin = RCPin or self.RCPin
 		# ^^^ Is there a cleaner way to have a default method parameter?
 
-		# print('Running...')
 		with open(os.path.join(DATA_DIR, "photoCell_data.csv"), "a") as photoCell_data:
 			while True:
 				writer = csv.writer(photoCell_data, delimiter=',')
 				lightLevelReading = self.RCtime(RCPin)
-				# print(lightLevelReading) if self.quiet else print(lightLevelReading, end="\r")
+				Group("sensor").send({'text': 'Light level: ' + str(lightLevelReading)})
 				writer.writerow([time.time(), lightLevelReading])
-
-
-# before bed test:
-from channels import Group
-import sys
-pc = PhotoCell(18)
-while True:
-	readout = str(pc.RCtime())
-	Group("sensor").send({'text': "light sensor is " + readout})
-	# sys.stdout.write("light sensor is " + readout)
-	time.sleep(.005)
-
-# end test
