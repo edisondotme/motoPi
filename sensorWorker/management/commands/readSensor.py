@@ -15,7 +15,7 @@ class Command(BaseCommand):
 		x = 0
 
 		# remove:
-		pc = PhotoCell(18)
+		# pc = PhotoCell(18)
 
 		while True:
 			Group("sensor").send({'text': "Sensor reading=" + str(x)})

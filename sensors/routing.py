@@ -1,7 +1,7 @@
 from channels.routing import route
 from .consumers import ws_message, ws_connect, ws_disconnect
 
-# TODO: Edit this to make proper use of channels.routing.route()
+# TODO: Edit this to make proper use of channels.routing.route() or not
 
 channel_routing = {
 	# route("websocket.receive", ws_message, path=r"^/chat/"),
