@@ -21,3 +21,9 @@ From the project root, run:
 ```
 pip install -r requirements/requirements.txt
 ```
+
+If you encounter the error: `include python.h compilation terminated` error, then run
+
+```
+sudo apt-get install python3-dev
+```
