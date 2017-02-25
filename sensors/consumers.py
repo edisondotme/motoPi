@@ -21,7 +21,7 @@ def ws_message(message):
 	# ASGI Websocket packet-received and send-packet message types
 	# both have a "text" key for their textual data.
 	# Group("sensor").send({'text': "Sensor reading="})
-	print("Message Received!" + message['text'] + '\n')
+	print("Message Received!: " + message['text'] + '\n')
 
 
 def ws_disconnect(message):
