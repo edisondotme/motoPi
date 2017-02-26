@@ -1,0 +1,22 @@
+{% extends "motoPi/header.html" %}
+
+{% load staticfiles %}
+{% block title %}Sensors - Light{% endblock %}
+
+<!-- I don't  now why this doesn't work. How do you override css? -->
+{% static 'css/style2.css' %}
+
+{% block content %}
+<h2>Light sensor</h2>
+
+	<div id="sensor">
+		<p>Sensor reading: {{ reading }}</p>
+	</div>
+
+	<div id="second-sensor">
+		<p>Loading...</p>
+	</div>
+	<script type="text/javascript" src='{% static "js/jquery-3.1.1.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/reconnecting-websocket.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/sensor.js" %}'></script>
+{% endblock %}
