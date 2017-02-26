@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-from .secrets import SECRET_KEY
+# from .secrets import SECRET_KEY
 # How do I make this work so that I can refer
 # to the secret as secrets.SECRET_KEY?
 # import secrets
@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = "secret"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.9']
+ALLOWED_HOSTS = ['192.168.1.9', 'localhost']
 
 
 # Application definition
