@@ -27,3 +27,5 @@ If you encounter the error: `include python.h compilation terminated` error, the
 ```
 sudo apt-get install python3-dev
 ```
+
+in `motoPi/motoPi/settings.py`, change `SECRET_KEY = SECRET_KEY` to `SECRET_KEY = "randomtext"`
