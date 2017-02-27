@@ -12,9 +12,10 @@ $(function() {
 
 		chatsock.onmessage = function(message) {
 				console.log("Received Sock message!");
-				console.log(message);
-				$('#sensor').append(message.data);
-				$('#second-sensor').append(message.newData);
+				console.log(message.data);
+				var data = JSON.parse(message.data);
+				$('#sensor').text(data['log']);
+				$('#second-sensor').text(data['second-sensor']);
 		};
 
 });
